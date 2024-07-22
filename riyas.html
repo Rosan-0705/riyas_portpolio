@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.profile-header p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.slider {
+    position: relative;
+    width: 400px; /* Set the slider width */
+    height: 400px; /* Set the slider height */
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slides img {
+    position: absolute;
+    width: 100%;
+    height: 100%; /* Ensure images fill the slider */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Smooth transition for fading */
+}
+
+.slides img.active {
+    opacity: 1;
+}
+
+.objective, .education, .skills, .projects, .contact {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #015BA1;
+    border-bottom: 2px solid #015BA1;
+    padding-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #015BA1;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.project {
+    background: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.contact a {
+    color: #015BA1;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #015BA1;
+    color: white;
+}
+
+.footer p {
+    margin: 0;
+}
+
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Profile Header -->
+        <header class="profile-header">
+            <h1>RIYAS L</h1>
+            <p>Department Of Computer Science</p>
+        </header>
+
+        <!-- Image Slider -->
+        <div class="slider">
+            <div class="slides">
+                <img src="img1.jpg" alt="Profile Picture 1" class="active">
+                <img src="img2.jpg" alt="Profile Picture 2">
+                <img src="img3.jpg" alt="Profile Picture 3">
+            </div>
+        </div>
+
+        <!-- Profile Objective -->
+        <section class="objective">
+            <h2>Profile Objective</h2>
+            <p>A dedicated and enthusiastic computer science student with a strong foundation in programming, data analysis, and problem-solving. Seeking to leverage my skills and knowledge to contribute effectively in a dynamic and challenging work environment.</p>
+        </section>
+
+        <!-- Education -->
+        <section class="education">
+            <h2>Education</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Degree</th>
+                        <th>Institution</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12th Grade</td>
+                        <td>SET Vidhya Devi</td>
+                        <td>2022</td>
+                    </tr>
+                    <tr>
+                        <td>Undergraduate</td>
+                        <td>St.Joseph's College(Atonomous)</td>
+                        <td>2022-2025</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Skills -->
+        <section class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Communication</li>
+                <li>Core Python </li>
+                <li>SQL</li>
+                <!-- Add more skills as needed -->
+            </ul>
+        </section>
+
+        <!-- Projects -->
+        <section class="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Portfolio</h3>
+                <p>The Project I created for my 1st Component</p>
+            </div>
+            <div class="project">
+                <h3>Billing System</h3>
+                <p>The project is in Progress</p>
+            </div>
+            <!-- Add more projects as needed -->
+        </section>
+
+        <!-- Contact -->
+        <section class="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:riyas382005@gmail.com">riyas382005@gmail.com</a></p>
+            <p>Phone: 7200336235</p>
+            <!-- Add more contact details if needed -->
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Riyas. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.querySelectorAll('.slides img');
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].classList.add('active');
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+</body>
+</html>
